@@ -39,12 +39,8 @@ Animator.prototype.retrieveResults = function(r){
 Animator.prototype.displayNextTweet = function() {
 	var that = this;
 	if(this.theIndex >= this.results.length) {
-		$("#container")
-			.css({
-				"z-index": 999,
-				position: "absolute"
-			})
-			.zoomTo();
+		$(".status").remove();
+		$("#container").zoomTo();
 		return;
 	}
 
