@@ -1,0 +1,22 @@
+{
+  "version": "1.1",
+  "name": "BlickAmMozilla",
+  "launch_path": "/henrik/webapps/BlickAmMozilla/zwitter.html",
+  "description": "@MozillaCH's first web app",
+  "icons": {
+    "128": "/henrik/webapps/BlickAmMozilla/MozillaCH.png"
+  },
+  "developer": {
+    "name": "Mozilla Switzerland",
+    "url": "http://twitter.com/MozillaCH"
+  },
+  "locales": {
+    "en-US": {
+      "name": "BlickAmMozilla",
+      "description": "@MozillaCH's first test app"
+    }
+  },
+  "installs_allowed_from": ["*"],
+  "default_locale": "en"
+}
+
