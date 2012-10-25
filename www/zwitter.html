@@ -5,92 +5,24 @@
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="./jquery-1.4.4.js"></script>
 		<script type="text/javascript" src="./jquery.zoomooz.js"></script>
-		<style>
-
-    #header{ font-size: 10px; }
-    #footer{ font-size: 6px; }
-    #orig{ width: 300px; height: 100px; background-color: #AAA; padding:5px;}
-
-    .status{
-      padding: 5px;
-      border: 5px solid white;
-      position: absolute;
-      color: white;
-      background-color: rgba(50,50,50, .85);
-    }
-
-    #go{
-      background-color: #555;
-      color: white;
-      cursor: pointer;
-      padding: 3px;
-    }
-
-    #go:hover{
-      background-color: #333;
-    }		
-		
-		</style>
 	</head>
 	<body>
 		<div id="header">
-		Blick Am Mozilla <br>
-		A <a href="https://marketplace.mozilla.org" target="_blank">Mozilla Marketplace</a> demo app by <a href="https://twitter.com/MozillaCH" target="_blank">Mozilla Switzerland</a>. <br>
-		It works on Firefox OS (B2G), and Firefox 15+ (desktop).
-	</div>
+			Blick Am Mozilla <br>
+			A <a href="https://marketplace.mozilla.org" target="_blank">Mozilla Marketplace</a> demo app by <a href="https://twitter.com/MozillaCH" target="_blank">Mozilla Switzerland</a>. <br>
+			It works on Firefox OS (B2G), and Firefox 15+ (desktop).
+		</div>
 		<div id="orig">
 				<h3>Press <strong>Stream!</strong> to get started.</h3>
-		  <input id="text" type="text" value="MozillaCH">
-		  <span id="go">Stream!</span>
-	  </div>
-	  <div id="footer"><p> Code derived from <a href="http://www.azarask.in" target="_blank">Aza Raskin</a>'s <a href="http://azarask.in/projects/zwitter/" target="_blank">zwitter</a>. Used with permission (<q>Code is meant to be shared. Ideas, doubly so.</q>).</div>
+		  		<input id="text" type="text" value="MozillaCH">
+		  		<span id="go">Stream!</span>
+	  	</div>
+	  	
+		<div id="footer">
+			<p> Code derived from <a href="http://www.azarask.in" target="_blank">Aza Raskin</a>'s <a href="http://azarask.in/projects/zwitter/" target="_blank">zwitter</a>. Used with permission (<q>Code is meant to be shared. Ideas, doubly so.</q>).</p>
+		</div>
 		
-<script>
-
-function go(){
-  var url = "http://search.twitter.com/search.json?callback=results&q=" + $("#text").val();
-  $("<script/>").attr("src", url).appendTo("body");  
-}
-
-$("#go").click(go);
-$("#text").keydown(function(e){ if( e.which == 13 )  go(); });
-
-function results(r){
-  window.results = r.results;
-  window.theIndex = 0;
-  displayNext();
-}
-
-function displayNext(){
-  if( window.theIndex >= window.results.length ){
-    $("body").zoomTo();
-    return;
-  }
-  
-  createDiv( window.results[window.theIndex] );
-  window.theIndex++;
-  setTimeout(displayNext, 4000);
-}
-
-function createDiv(status){
-  var size = (Math.random()+1)*30;
-    
-  $("<div class='status'>").css({
-    left: Math.random()*window.innerWidth,
-    top: Math.random()*window.innerHeight,
-    width: 500*Math.random()+5*size,
-    fontSize: size,
-    backgroundColor: "hsla(" + 360 * Math.random() + ", 40%, 50%,.8)",
-    "-moz-transform": "rotate(" + Math.random()*180 + "deg)",
-    "-webkit-transform" : "rotate(" + Math.random()*180 + "deg)"
-  })
-  .html(status.text)
-  .appendTo("body")
-  .zoomTo();
-}
-
-$("#orig").zoomTo();
-</script>
+		<script src="main.js"> </script>
 </body>
 
 </html>

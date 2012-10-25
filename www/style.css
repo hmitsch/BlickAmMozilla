@@ -29,3 +29,26 @@ html {
 /* -----------------------
    Regular Stuff
    ----------------------- */
+
+   #header{ font-size: 10px; }
+   #footer{ font-size: 6px; }
+   #orig{ width: 300px; height: 100px; background-color: #AAA; padding:5px;}
+
+   .status{
+     padding: 5px;
+     border: 5px solid white;
+     position: absolute;
+     color: white;
+     background-color: rgba(50,50,50, .85);
+   }
+
+   #go{
+     background-color: #555;
+     color: white;
+     cursor: pointer;
+     padding: 3px;
+   }
+
+   #go:hover{
+     background-color: #333;
+   }		
