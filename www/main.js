@@ -1,14 +1,20 @@
 
 
 function go(){
-	var url = "http://search.twitter.com/search.json?callback=results&q=" + $("#text").val();
+	var url = "http://search.twitter.com/search.json?callback=retrieveResults&q=" + $("#text").val();
 	$("<script/>").attr("src", url).appendTo("body");  
 }
 
 $("#go").click(go);
-$("#text").keydown(function(e){ if( e.which == 13 )  go(); });
+$("#text").keydown(
+	function(e) { 
+		if(e.which === 13)  {
+			go(); 
+		}
+	}
+);
 
-function results(r){
+function retrieveResults(r){
 	window.results = r.results;
 	window.theIndex = 0;
 	displayNext();
