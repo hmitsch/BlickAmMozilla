@@ -1,4 +1,4 @@
-$("#orig").zoomTo();
+
 
 var Animator = function () {
 	var that = this;
@@ -27,13 +27,24 @@ Animator.prototype.fetchAndStart = function() {
 Animator.prototype.retrieveResults = function(r){
 	this.results = r.results;
 	this.theIndex = 0;
+	$("#container")
+		.css({
+			"z-index": 0,
+			position: "relative"
+		})
+	
 	this.displayNextTweet();
 };
 
 Animator.prototype.displayNextTweet = function() {
 	var that = this;
 	if(this.theIndex >= this.results.length) {
-		this.body.zoomTo();
+		$("#container")
+			.css({
+				"z-index": 999,
+				position: "absolute"
+			})
+			.zoomTo();
 		return;
 	}
 
@@ -64,8 +75,10 @@ Animator.prototype.createStyleProperties = function() {
 	};
 };
 
+// create animator
 var animator = new Animator();
-
 function triggerAnimator (response) {
 	animator.retrieveResults(response);
 };
+
+$("#orig").zoomTo();
