@@ -10,16 +10,10 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	width:100%;
-	height:100%;
+	width: 100%;
+	height: 100%;
 	font-family: Helvetica;
 	background-color: #DDD;
-}
-
-body {
-	-webkit-transform-origin: 50% 50%;
-	-moz-transform-origin: 50% 50%;
-	-o-transform-origin: 50% 50%;    
 }
 
 html {
@@ -30,30 +24,29 @@ html {
    Regular Stuff
    ----------------------- */
 
-   #header{ font-size: 10px; }
-   #footer{ font-size: 6px; }
-   #orig{ width: 300px; height: 100px; background-color: #AAA; padding:5px;}
+#header{ font-size: 10px; }
+#footer{ font-size: 6px; }
+#orig{ width: 300px; height: 100px; background-color: #AAA; padding:5px;}
 
+#container {
+	width: 340px;
+}
 
-	#container {
-		width: 340px;
-	}
+.status{
+  padding: 5px;
+  border: 5px solid white;
+  position: absolute;
+  color: white;
+  background-color: rgba(50,50,50, .85);
+}
 
-   .status{
-     padding: 5px;
-     border: 5px solid white;
-     position: absolute;
-     color: white;
-     background-color: rgba(50,50,50, .85);
-   }
+#go{
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 3px;
+}
 
-   #go{
-     background-color: #555;
-     color: white;
-     cursor: pointer;
-     padding: 3px;
-   }
-
-   #go:hover{
-     background-color: #333;
-   }		
+#go:hover{
+  background-color: #333;
+}

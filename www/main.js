@@ -7,7 +7,7 @@ var Animator = function () {
 	this.queryInput = $("#text");
 	
 	$("#go").click(function () {
-		that.fetchAndStart()
+		that.fetchAndStart();
 	});
 	
 	$("#text").keydown(
@@ -19,19 +19,19 @@ var Animator = function () {
 	);
 };
 
-Animator.prototype.fetchAndStart = function() {
+Animator.prototype.fetchAndStart = function () {
 	var url = "http://search.twitter.com/search.json?callback=triggerAnimator&q=" + this.queryInput.val();
 	$("<script/>").attr("src", url).appendTo("body");
 };
 
-Animator.prototype.retrieveResults = function(r){
+Animator.prototype.retrieveResults = function (r) {
 	this.results = r.results;
 	this.theIndex = 0;
 	$("#container")
 		.css({
 			"z-index": 0,
 			position: "relative"
-		})
+		});
 	
 	this.displayNextTweet();
 };
@@ -75,6 +75,6 @@ Animator.prototype.createStyleProperties = function() {
 var animator = new Animator();
 function triggerAnimator (response) {
 	animator.retrieveResults(response);
-};
+}
 
 $("#orig").zoomTo();
