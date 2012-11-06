@@ -4,9 +4,11 @@ CACHE:
 zwitter.html
 main.js
 style.css
-jquery-1.4.4.js
+jquery-1.8.2.js
 jquery.zoomooz.js
 
 NETWORK:
-http://search.twitter.com/*
+http://search.twitter.com/
+
+
 
