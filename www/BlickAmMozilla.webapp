@@ -1,7 +1,7 @@
 {
   "version": "1.2",
   "name": "BlickAmMozilla",
-  "launch_path": "/henrik/webapps/BlickAmMozilla/splash.html",
+  "launch_path": "splash.html",
   "description": "@MozillaCH's first web app",
   "icons": {
     "128": "/henrik/webapps/BlickAmMozilla/MozillaCH.png"
